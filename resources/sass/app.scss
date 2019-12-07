@@ -1,0 +1,25 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+.welcome-message {
+    color:  darkcyan;
+    text-align: center;
+
+}
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+.logo-small{
+    height: 50px;
+    margin-right: 10px;
+    img {
+        height:100%;
+    }
+}
+
