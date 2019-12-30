@@ -30,4 +30,11 @@ class BaseController extends Controller
     {
         $this->alert(self::ALERT_INFO, $message);
     }
+
+    public function getAlert()
+    {
+        $alert = Session::get('alert');
+        Session::remove('alert');
+        return $alert;
+    }
 }

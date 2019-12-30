@@ -32,7 +32,7 @@ class AdminProductsController extends BaseController
         $categories = Category::where(['parent_id' => 0])->get();
         return view('admin.products.add', [
             'categories' => $categories,
-            'alert' => Session::get('alert'),
+            'alert' => $this->getAlert(),
         ]);
     }
 
