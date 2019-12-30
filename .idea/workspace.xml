@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10ee44df-006c-4b09-9469-951213e3af0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Docs/AmericanCarsDealership.xd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docs/Konspekt projektu.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docs/Konspekt projektu.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/American-muscle-car.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/cars-collection/cadillac-escalade.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/cars-collection/chrysler-town.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/cars-collection/dodge-challenger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/cars-collection/ford-mustang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/cars-collection/ford-raptor-f150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/cars-collection/info-dot-zdj-aut.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/cars-collection/jeep-compass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/assets/img/cars-collection/tesla-model-s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +198,7 @@
       <workItem from="1574956894364" duration="952000" />
       <workItem from="1575193489757" duration="2266000" />
       <workItem from="1575721282628" duration="14564000" />
-      <workItem from="1577726059215" duration="29000" />
+      <workItem from="1577726059215" duration="192000" />
     </task>
     <servers />
   </component>
