@@ -46,6 +46,7 @@ header{
   border-radius: 3px;
   border:1px solid #515151;
   width: 20%;
+  font-size: 18px;
 }
 
 .login-panel button{
@@ -58,4 +59,102 @@ header{
 
 .login-panel input, .login-panel span{
   margin-left: 15px;
+}
+
+.logo-picture-container{
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.logo-picture-container img{
+  margin-top: 8%;
+  width: 25%;
+}
+
+.search-bar-container{
+  margin-top: 50px;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.search-bar-container input{
+  width: 225px;
+  height: 35px;
+  font-size: 18px;
+  border-radius: 10px;
+  border:1px solid #515151;
+}
+
+.search-bar-container button{
+  width: 150px;
+  margin-top: 15px;
+  height: 27px;
+  font-size: 18px;
+  border-radius: 10px;
+  border:1px solid #515151;
+}
+
+#cars-container{
+  margin-top: 50px;
+  text-align: center;
+}
+#cars-container h1{
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+#result-container {
+ max-width: 1200px;
+ margin: 0 auto;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+
+}
+/* Product items */
+div.car-block {
+ width: 25%;
+}
+div.car-block-in {
+ box-sizing: border-box;
+ margin: 5px;
+ padding: 10px;
+ border: 1px solid #e7fcde;
+ background: #f6fff2;
+}
+img.p-img {
+ width: 100%;
+ height: auto;
+}
+div.p-brand {
+ font-weight: bold;
+ font-size: 1.1em;
+}
+div.p-price {
+ color: #f44242;
+}
+div.p-model {
+ color: #888;
+ font-size: 0.9em;
+}
+button.p-show {
+ background: #515151;
+ color: #fff;
+ border: none;
+ width: 100%;
+ padding: 10px;
+ margin: 10px 5px 5px 5px;
+ font-size: 1.1em;
+ font-weight: bold;
+ cursor: pointer;
+ border-radius: 5px;
+}
+/* Responsive */
+@media only screen and (max-width: 1024px) {
+ div.car-block { width: 33%; }
+}
+@media only screen and (max-width: 600px) {
+ div.car-block { width: 50%; }
 }
