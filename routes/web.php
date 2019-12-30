@@ -25,5 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Admin panel routes
 Route::get('/admin/products/add', 'AdminProductsController@addProductForm')->name('admin_products_add_form');
 Route::post('/admin/products/add', 'AdminProductsController@addProductAction')->name('admin_products_add_action');
+Route::get('/admin/products', 'AdminProductsController@listProducts')->name('admin_products_list');
+Route::get('/admin/products/edit/{id}', 'AdminProductsController@updateProductForm')->name('admin_products_update_form');
+Route::post('/admin/products/edit/{id}', 'AdminProductsController@updateProductAction')->name('admin_products_update_action');
 //Route::get('/item/{id}', 'ItemsController@index')->name('item.show');
 //Route::get('/item/{id}', 'ItemsController@itemDetails')->name('item.show');

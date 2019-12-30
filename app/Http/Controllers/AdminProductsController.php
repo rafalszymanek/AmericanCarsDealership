@@ -33,8 +33,11 @@ class AdminProductsController extends BaseController
         return view('admin.products.add', [
             'categories' => $categories,
             'alert' => $this->getAlert(),
+            'formAction' => route('admin_products_add_action'),
+            'product' => new Product(),
         ]);
     }
+
 
     public function addProductAction(Request $request)
     {
@@ -65,5 +68,30 @@ class AdminProductsController extends BaseController
             $this->error(self::PRODUCT_ERROR_MESSAGE);
         }
         return redirect()->back();
+    }
+
+    public function listProducts()
+    {
+        $products = Product::all();
+        return view('admin.products.list', ['products' => $products]);
+    }
+
+    public function updateProductForm($id, Request $request)
+    {
+        $id = (int) $id;
+        // sql injection solution
+        $product = Product::where(['id' => $id])->first();
+        $categories = Category::where(['parent_id' => 0])->get();
+        return view('admin.products.add', [
+            'categories' => $categories,
+            'alert' => $this->getAlert(),
+            'product' => $product,
+            'formAction' => route('admin_products_update_action', ['id' => $product->id]),
+        ]);
+    }
+
+    public function updateProductAction(Request $request)
+    {
+
     }
 }
