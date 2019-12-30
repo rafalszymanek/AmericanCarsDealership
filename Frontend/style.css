@@ -158,3 +158,15 @@ button.p-show {
 @media only screen and (max-width: 600px) {
  div.car-block { width: 50%; }
 }
+
+footer{
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #515151;
+}
+footer #copyright{
+  font-size: 130%;
+}
