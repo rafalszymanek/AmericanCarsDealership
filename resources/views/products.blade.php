@@ -1,8 +1,8 @@
-@extends('layouts.homeLayout')
+@extends('layouts.twoColumn')
 
 @section('content')
     <div class="row">
-        @foreach ($randomProducts as $product)
+        @foreach ($products as $product)
         <div class="mb-3 col-md-6 col-xl-3 col-lg-4 col-sm-12">
             <div class="card">
                 @if (!empty($product->image_src))

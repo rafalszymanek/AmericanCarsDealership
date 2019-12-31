@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -36,5 +37,12 @@ class BaseController extends Controller
         $alert = Session::get('alert');
         Session::remove('alert');
         return $alert;
+    }
+
+    public function bindParams($params = [])
+    {
+        return array_merge([
+            'categories' => Category::where(['parent_id' => 0])->get(),
+        ], $params);
     }
 }
