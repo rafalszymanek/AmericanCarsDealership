@@ -17,12 +17,6 @@ class ProductsDetailsController extends BaseController
     public function productsDetails($id)
     {
         $product = Product::where(['id' => $id])->first();
-        return view('productsDetails',['product' => $product]);
-
-    }
-
-    public function category()
-    {
-        return view('productsDetails',$this->bindParams());
+        return view('productsDetails', ['product' => $product]);
     }
 }

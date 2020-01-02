@@ -19,7 +19,7 @@ class AdminProductsController extends BaseController
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
