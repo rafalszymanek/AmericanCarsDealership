@@ -82,7 +82,7 @@
                 </div>
             </div>
         </nav>
-        <div class="row justify-content-center pt-2">
+        <div class="row justify-content-center pt-2 mb-2">
             <div class="welcome-message">
                 <h1>Amerykańska motoryzacja na wyciągnięcie ręki!</h1>
             </div>

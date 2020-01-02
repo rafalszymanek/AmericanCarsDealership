@@ -45,4 +45,5 @@ class BaseController extends Controller
             'categories' => Category::where(['parent_id' => 0])->get(),
         ], $params);
     }
+
 }

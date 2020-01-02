@@ -31,6 +31,4 @@ Route::post('/admin/products/edit/{id}', 'AdminProductsController@updateProductA
 Route::get('/products', 'ProductsController@all')->name('products');
 Route::get('/products/category/{id}', 'ProductsController@category')->name('products_category');
 Route::get('/products/category/{id},{sortingField},{sortingType}', 'ProductsController@category')->name('products_category_sorting');
-
-//Route::get('/item/{id}', 'ItemsController@index')->name('item.show');
-//Route::get('/item/{id}', 'ItemsController@itemDetails')->name('item.show');
+Route::get('/products/{id}', 'ProductsDetailsController@productsDetails')->name('products_details');

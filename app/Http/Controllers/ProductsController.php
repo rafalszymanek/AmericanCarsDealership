@@ -7,6 +7,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+
 class ProductsController extends BaseController
 {
     public function __construct()
