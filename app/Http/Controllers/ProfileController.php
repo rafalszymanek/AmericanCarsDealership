@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function index($user)
+    public function index()
     {
-        $user = \App\User::find($user);
+        $user = Auth::user();
         return view('profile.index', [
             'user' => $user,
             'address' => $user->address,

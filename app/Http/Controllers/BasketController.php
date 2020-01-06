@@ -29,7 +29,8 @@ class BasketController extends BaseController
     {
         $productId = (int) $productId;
         if (empty($productId)) {
-            die('Podaj id produktu');
+            $this->info('Wybierz produkt');
+            return redirect()->back();
         }
         try {
             $product = Product::where(['id' => $productId])->firstOrFail();
