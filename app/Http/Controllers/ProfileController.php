@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index($user)
     {
-        return view('profile.index');
+        $user = \App\User::find($user);
+        return view('profile.index', [
+            'user' => $user,
+            'address' => $user->address,
+        ]);
     }
 }

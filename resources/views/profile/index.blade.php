@@ -4,12 +4,12 @@
     <div class="container-fluid mt-5 ">
         <div class="row">
             <div class="col-3 border-right">
-                <h2>Imię i nazwisko</h2>
-                <p>test@t.pl</p>
-                <p>Ulica: xxxxxx</p>
-                <p>Nr. domu: xxxxxx</p>
-                <p>Kod pocztowy: xxxxx</p>
-                <p>Miasto: xxxxx</p>
+                <h2>{{ $user->name }} {{ $user->surname }}</h2>
+                <p>{{ $user->email }}</p>
+                <p>Ulica: {{ $address->street }}</p>
+                <p>Nr. domu: {{ $address->house_no }}</p>
+                <p>Kod pocztowy: {{ $address->postcode }}</p>
+                <p>Miasto: {{ $address->city }}</p>
 
             </div>
             <div class="col-9">

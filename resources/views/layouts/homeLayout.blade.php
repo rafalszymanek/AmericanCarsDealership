@@ -55,7 +55,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="/profile">Twoje zamówienia</a>
+                                <a class="nav-link" href="/profile/{{ Auth::user()->id }}">Twoje zamówienia</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
