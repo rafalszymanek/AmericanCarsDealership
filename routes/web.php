@@ -32,3 +32,8 @@ Route::get('/products', 'ProductsController@all')->name('products');
 Route::get('/products/category/{id}', 'ProductsController@category')->name('products_category');
 Route::get('/products/category/{id},{sortingField},{sortingType}', 'ProductsController@category')->name('products_category_sorting');
 Route::get('/products/{id}', 'ProductsDetailsController@productsDetails')->name('products_details');
+Route::get('/checkout', 'CheckoutController@viewOrder')->name('checkout_view');
+Route::post('/checkout', 'CheckoutController@sendOrder')->name('checkout_send');
+Route::get('/basket', 'BasketController@list')->name('basket_list');
+Route::get('/basket/add/{productId}', 'BasketController@add')->name('basket_add');
+Route::get('/basket/remove/{productId}', 'BasketController@remove')->name('basket_remove');

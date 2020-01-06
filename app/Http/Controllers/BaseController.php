@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Services\BasketService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -43,6 +44,8 @@ class BaseController extends Controller
     {
         return array_merge([
             'categories' => Category::where(['parent_id' => 0])->get(),
+            'alert' => $this->getAlert(),
+            'basket' => BasketService::basketSummary(),
         ], $params);
     }
 

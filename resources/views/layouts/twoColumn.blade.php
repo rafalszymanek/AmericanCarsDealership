@@ -82,7 +82,16 @@
                 </div>
             </div>
         </nav>
+
+        @if (!empty($alert))
+            <div class="row flex-column">
+                <div class="full-width alert alert-{{ $alert['type'] }}" role="alert">
+                    {{ $alert['message'] }}
+                </div>
+            </div>
+        @endif
         <div class="row justify-content-center pt-2 mb-2">
+
             <div class="welcome-message">
                 <h1>Amerykańska motoryzacja na wyciągnięcie ręki!</h1>
             </div>

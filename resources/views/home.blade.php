@@ -1,4 +1,4 @@
-@extends('layouts.homeLayout')
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
@@ -7,11 +7,14 @@
             <div class="card">
                 @if (!empty($product->image_src))
                     <img src="{{ $product->image_src }}" class="card-img-top" alt="{{ $product->name }}">
+                @else
+                    <img src="https://via.placeholder.com/500" class="card-img-top" alt="{{ $product->name }}">
                 @endif
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text">{{ $product->description }}</p>
-                    <a href="#" class="btn btn-primary">Add to basket</a>
+                    <a href="{{ route('basket_add', ['productId' => $product->id]) }}" class="btn btn-primary">Dodaj do koszyka</a>
+                    <a href="{{ route('products_details', ['id' => $product->id]) }}" class="btn btn-primary">Szczegóły</a>
                 </div>
             </div>
         </div>

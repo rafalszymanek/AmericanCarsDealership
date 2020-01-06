@@ -14,7 +14,6 @@ class ProductsController extends BaseController
     {
     }
 
-
     public function all()
     {
         $allProducts = Product::all();
@@ -24,7 +23,10 @@ class ProductsController extends BaseController
     public function category($id)
     {
         $products = Product::where(['category_id' => $id])->get();
-        return view('products',$this->bindParams(['products' => $products, 'currentCategoryId' => $id]));
+        return view('products', $this->bindParams([
+            'products' => $products,
+            'currentCategoryId' => $id
+        ]));
     }
 
 

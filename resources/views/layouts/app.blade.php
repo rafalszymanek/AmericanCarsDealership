@@ -18,13 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/checkout.css">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-{{--                   {{ config('app.name', 'Laravel') }}--}}
                     <div class="logo-small"><img src="/png/testlogo.png" ></div>
                     AmericanCarsShop
                 </a>
@@ -73,6 +73,13 @@
                 </div>
             </div>
         </nav>
+        @if (!empty($alert))
+            <div class="row flex-column">
+                <div class="full-width alert alert-{{ $alert['type'] }}" role="alert">
+                    {{ $alert['message'] }}
+                </div>
+            </div>
+        @endif
         <div class="row justify-content-center pt-2">
             <div class="welcome-message">
                 <h1>Amerykańska motoryzacja na wyciągnięcie ręki!</h1>

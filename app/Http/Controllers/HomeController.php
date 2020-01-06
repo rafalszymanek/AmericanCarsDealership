@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends BaseController
 {
@@ -14,7 +15,6 @@ class HomeController extends BaseController
      */
     public function __construct()
     {
-        //$this->middleware('auth');
     }
 
     /**
@@ -24,7 +24,12 @@ class HomeController extends BaseController
      */
     public function index()
     {
-        $randomProducts = Product::all()->random(4);
+        $randomProducts = Product::where(['is_available' => 1])
+            ->orderBy(
+                DB::raw('RAND()')
+            )
+            ->limit(4)
+            ->get();
         return view('home', $this->bindParams([
             'randomProducts' => $randomProducts,
         ]));
