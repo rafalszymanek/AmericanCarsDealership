@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends BaseController
@@ -24,6 +25,7 @@ class HomeController extends BaseController
      */
     public function index()
     {
+//        dd(Auth::user()->addresses, Auth::user()->defaultAddress);
         $randomProducts = Product::where(['is_available' => 1])
             ->orderBy(
                 DB::raw('RAND()')

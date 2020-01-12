@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -16,7 +15,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'surname','email', 'password', 'address_id'
+        'email',
+        'password',
     ];
 
     /**
@@ -25,7 +25,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -37,10 +38,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function address()
+    public function addresses()
     {
-        return $this->belongsTo(Address::class);
+        return $this->hasMany('App\Address', 'user_id', 'id');
     }
 
-    
+    public function defaultAddress()
+    {
+        return $this
+            ->hasOne('App\Address', 'user_id', 'id')
+            ->where(['is_default' => 1]);
+    }
 }
