@@ -73,9 +73,4 @@ class CheckoutController extends BaseController
             return redirect()->back();
         }
     }
-
-    public function addProductsFromBasket()
-    {
-        $products = BasketService::getAll();
-    }
 }
