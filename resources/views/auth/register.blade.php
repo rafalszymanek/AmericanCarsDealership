@@ -75,12 +75,26 @@
 
 
                         <div class="form-group row">
-                            <label for="house_no" class="col-md-4 col-form-label text-md-right">{{ __('Nr domu/lokalu') }}</label>
+                            <label for="house_number" class="col-md-4 col-form-label text-md-right">{{ __('Nr domu') }}</label>
 
                             <div class="col-md-6">
-                                <input id="house_no" type="text" class="form-control @error('house_no') is-invalid @enderror" name="house_no" value="{{ old('house_no') }}" required autocomplete="house_no" autofocus>
+                                <input id="house_number" type="text" class="form-control @error('house_number') is-invalid @enderror" name="house_number" value="{{ old('house_number') }}" required autocomplete="house_number" autofocus>
 
-                                @error('house_no')
+                                @error('house_number')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="local_number" class="col-md-4 col-form-label text-md-right">{{ __('Nr lokalu') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="house_number" type="text" class="form-control @error('local_number') is-invalid @enderror" name="local_number" value="{{ old('local_number') }}" required autocomplete="local_number" autofocus>
+
+                                @error('local_number')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
