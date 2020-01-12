@@ -24,7 +24,11 @@
     </div>
     <div class="row mt-2 mb-2">
         <div class="col">
-            <a class="btn btn-outline-success float-right m-1" href="{{ route('checkout_view', ['id' => $product->id]) }}" role="button">Zamów teraz</a>
+            @if ($product->is_available)
+                <a class="btn btn-outline-success float-right m-1" href="{{ route('basket_add', ['productId' => $product->id]) }}" role="button">Dodaj do koszyka</a>
+            @else
+                <span>produkt niedostępny</span>
+            @endif
             <a class="btn btn-outline-secondary float-right m-1" href="javascript:history.back()" role="button">Powrót</a>
         </div>
 

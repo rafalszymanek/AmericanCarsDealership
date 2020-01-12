@@ -42,6 +42,12 @@ class BasketService
         return $schema;
     }
 
+    public static function getQty()
+    {
+        $summary = self::basketSummary();
+        return $summary['productsQty'] ?? 0;
+    }
+
     public static function getAll()
     {
         return session()->get(self::BASKET_SESSION_NAME);

@@ -45,7 +45,6 @@ class BaseController extends Controller
         return array_merge([
             'categories' => Category::where(['parent_id' => 0])->get(),
             'alert' => $this->getAlert(),
-            'basket' => BasketService::basketSummary(),
         ], $params);
     }
 

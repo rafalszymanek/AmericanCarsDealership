@@ -13,7 +13,9 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text">{{ $product->description }}</p>
-                    <a href="{{ route('basket_add', ['productId' => $product->id]) }}" class="btn btn-primary">Dodaj do koszyka</a>
+                    @if ($product->is_available)
+                        <a href="{{ route('basket_add', ['productId' => $product->id]) }}" class="btn btn-primary">Dodaj do koszyka</a>
+                    @endif
                     <a href="{{ route('products_details', ['id' => $product->id]) }}" class="btn btn-primary">Szczegóły</a>
                 </div>
             </div>

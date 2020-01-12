@@ -14,7 +14,10 @@ class UserUpdate extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table){
-        
+            $table->string('surname', 64);
+            $table->string('role', 8);
+            $table->bigInteger('address_id');
+            $table->boolean('is_active');
 
         });
     }
@@ -27,7 +30,10 @@ class UserUpdate extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table){
-       
+            $table->dropColumn('surname');
+            $table->dropColumn('role');
+            $table->dropColumn('address_id');
+            $table->dropColumn('is_active');
 
         });
     }

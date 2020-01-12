@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use App\Product;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 
 class ProductsController extends BaseController
 {
-    public function __construct()
-    {
-    }
-
     public function all()
     {
         $allProducts = Product::all();
@@ -29,5 +22,12 @@ class ProductsController extends BaseController
         ]));
     }
 
-
+    public function details($id)
+    {
+        $id = (int)$id;
+        $product = Product::where(['id' => $id])->first();
+        return view('productsDetails', $this->bindParams([
+            'product' => $product,
+        ]));
+    }
 }
