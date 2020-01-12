@@ -6,6 +6,7 @@ use App\Category;
 use App\Order;
 use App\Product;
 use App\Services\BasketService;
+use App\Services\CheckoutService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -63,10 +64,18 @@ class CheckoutController extends BaseController
             $order->saveOrFail();
             $this->success('Zamowienie zlozone');
 
+            CheckoutService::addProductsToOrder($order->id);
+            BasketService::clear();
+
             return view('checkout.summary', $this->bindParams(['order' => $order]));
         } catch (\Exception $ex) {
             $this->error('Something went wrong' . $ex->getMessage());
             return redirect()->back();
         }
+    }
+
+    public function addProductsFromBasket()
+    {
+        $products = BasketService::getAll();
     }
 }

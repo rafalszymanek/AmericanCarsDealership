@@ -68,6 +68,11 @@ class BasketService
         self::replaceBasket(array_values($items));
     }
 
+    public static function clear()
+    {
+        session()->remove(self::BASKET_SESSION_NAME);
+    }
+
     public static function replaceBasket($newItems)
     {
         return session()->put(self::BASKET_SESSION_NAME, $newItems);
