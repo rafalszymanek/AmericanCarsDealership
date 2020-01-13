@@ -10,9 +10,11 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $address = $user->addresses;
+        $address_array = $address->toArray();
         return view('profile.index', [
             'user' => $user,
-            'address' => $user->address,
+            'address' => $address_array[0],
         ]);
     }
 }

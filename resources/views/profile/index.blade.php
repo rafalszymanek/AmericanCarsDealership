@@ -6,10 +6,10 @@
             <div class="col-3 border-right">
                 <h2>{{ $user->name }} {{ $user->surname }}</h2>
                 <p>{{ $user->email }}</p>
-                <p>Ulica:</p>
-                <p>Nr. domu: </p>
-                <p>Kod pocztowy: </p>
-                <p>Miasto: </p>
+                <p>Ulica: {{ $address['street'] }}</p>
+                <p>Nr. domu: {{ $address['house_number'] }} / {{ $address['local_number'] }} </p>
+                <p>Kod pocztowy: {{ $address['postcode'] }}</p>
+                <p>Miasto: {{ $address['city'] }} </p>
 
             </div>
             <div class="col-9">
