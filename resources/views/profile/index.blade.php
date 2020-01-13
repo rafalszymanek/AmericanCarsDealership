@@ -1,4 +1,4 @@
-@extends('layouts.homeLayout')
+@extends('layouts.app')
 
 @section('content')
     <div class="container-fluid mt-5 ">
@@ -6,10 +6,10 @@
             <div class="col-3 border-right">
                 <h2>{{ $user->name }} {{ $user->surname }}</h2>
                 <p>{{ $user->email }}</p>
-                <p>Ulica: {{ $address->street }}</p>
-                <p>Nr. domu: {{ $address->house_no }}</p>
-                <p>Kod pocztowy: {{ $address->postcode }}</p>
-                <p>Miasto: {{ $address->city }}</p>
+                <p>Ulica:</p>
+                <p>Nr. domu: </p>
+                <p>Kod pocztowy: </p>
+                <p>Miasto: </p>
 
             </div>
             <div class="col-9">
