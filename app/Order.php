@@ -48,6 +48,7 @@ class Order extends Model
         return $this->hasOne("App\User");
     }
 
+   
     public static function boot()
     {
         parent::boot();
@@ -55,5 +56,11 @@ class Order extends Model
             $model->status = self::STATUS_NEW;
         });
 
+    }
+
+    public function ordersProduct()
+    {
+        echo "TEST";
+        return $this->hasOne("App\OrderProduct");
     }
 }
