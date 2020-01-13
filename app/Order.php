@@ -43,6 +43,11 @@ class Order extends Model
         return static::$recollectionMethods;
     }
 
+    public function user()
+    {
+        return $this->hasOne("App\User");
+    }
+
     public static function boot()
     {
         parent::boot();
