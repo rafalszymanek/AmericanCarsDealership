@@ -60,7 +60,6 @@ class Order extends Model
 
     public function ordersProduct()
     {
-        echo "TEST";
         return $this->hasOne("App\OrderProduct");
     }
 }
