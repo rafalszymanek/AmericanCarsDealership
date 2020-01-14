@@ -18,9 +18,9 @@
                 <thead>
                     <tr>
                     <th scope="col">Nr</th>
-                    <th scope="col" style="width:15%">Marka</th>
-                    <th scope="col" style="width:15%">Model</th>
-                    <th scope="col">Cena</th>
+                    <th scope="col" style="width:14%">Marka</th>
+                    <th scope="col" style="width:14%">Model</th>
+                    <th scope="col" style="width:12%">Cena</th>
                     <th scope="col" style="width:9%">Rocznik</th>
                     <th scope="col" style="width:9%">Kolor</th>
                     <th scope="col" style="width:9%">Silnik</th>
