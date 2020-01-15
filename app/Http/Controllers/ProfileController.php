@@ -14,33 +14,33 @@ class ProfileController extends Controller
         $address = $user->addresses;
         $address_array = $address->toArray();
 
-        # Get all orders that belongs to client
+        # Get all orders that belong to client
         $orders = $user->orders;
-        $arrayOfClientProducts = []; # Array to collect all ordered products
-        $arrayOfCategories = [];
+        $arrayClientProducts = []; # Collect all ordered products
+        $arrayCategories = []; # Collect all catergories to ordered products
 
-        # Put all products ordered by client to array
+        # Put all products and categories ordered by client to array
         foreach ($orders as $order) {
+            # Product
             $orderProduct = $order->ordersProduct;
             $productArray = $orderProduct->products->toArray();
-            $product = $productArray[0];
+            $product = $productArray[0]; # Idk why array is in array
             
-            array_push($arrayOfClientProducts, $product);
+            array_push($arrayClientProducts, $product);
 
+            # Category
             $category = ('App\Category')::find($product['category_id']);
-            array_push($arrayOfCategories, $category);
-
-           
+            array_push($arrayCategories, $category);
 
         }
 
         # Send it to  view /profile.index
         return view('profile.index', [
-            'user' => $user,
-            'address' => $address_array[0],
-            'orders' => $orders,
-            'products' => $arrayOfClientProducts,
-            'categories' => $arrayOfCategories,
+            'user' => $user, # Object
+            'address' => $address_array[0], # Object
+            'orders' => $orders, # Array
+            'products' => $arrayClientProducts, # Array
+            'categories' => $arrayCategories, # Array
         ]);
     }
 }
