@@ -38,7 +38,12 @@ class RetailerController extends Controller
 
 
        
-        return view('retailer.index');
+        return view('retailer.index', [
+            'user' => $user, # Object 
+            'products' => $products, # Array
+            'orders' => $ordersArray, # Array
+            'clients' => $userArray, # Array
+        ]);
 
     }
 }
