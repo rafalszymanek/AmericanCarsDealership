@@ -45,7 +45,7 @@ class Order extends Model
 
     public function user()
     {
-        return $this->hasOne("App\User");
+        return $this->hasOne("App\User", "id", "client_id");
     }
 
    
