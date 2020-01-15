@@ -10,9 +10,12 @@ class RetailerController extends Controller
     public function index()
     {
         $user = Auth::user();
-        if ($user == null || !$user->role != 'RETAILER') {
+        if ($user == null || $user->role != 'RETAILER') {
             return abort(404);
         }
+
+        #$products = ('App\Product')::where('retailer_id', 4);
+        #dd($products);
 
 
 
