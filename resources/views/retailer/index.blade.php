@@ -54,7 +54,7 @@
                             </select>
                         </td>       
                         <div class="form-group">
-                        <td class="text-center"><button type="submit">Edytuj</button></td>
+                        <td class="text-center"><button type="submit">Zapisz</button></td>
                         </div>
                     </tr>
                     @php
