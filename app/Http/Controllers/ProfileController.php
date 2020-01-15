@@ -24,7 +24,7 @@ class ProfileController extends Controller
             # Product
             $orderProduct = $order->ordersProduct;
             $productArray = $orderProduct->products->toArray();
-            $product = $productArray[0]; # Idk why array is in array
+            $product = $productArray; # Idk why array is in array
             
             array_push($arrayClientProducts, $product);
 
