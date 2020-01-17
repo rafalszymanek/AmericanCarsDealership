@@ -51,7 +51,15 @@ class RetailerController extends Controller
     public function update(Request $request)
     {   
         $data = request()->toArray();
-        dd($data['status']);
+        $newStatus = $data['status'];
+        $order = ('App\Order')::where('id', $request->route('id'))->first();
+        
+        if ($newStatus != 'noChange') {
+            $order->status = $newStatus;
+            $order->save();
+        }
+
+        return redirect('/retailer');
     }
 
 

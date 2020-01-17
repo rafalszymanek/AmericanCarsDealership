@@ -50,7 +50,7 @@
                                     <td class="text-center">{{ $order -> payment_method }}</td>
                                     
                                     <td class="form-group text-center">
-                                        <select id="status_to_ed" name="status"> 
+                                        <select id="status" name="status"> 
                                                 <option value="noChange">{{ $order -> status}}</option>       
                                                 <option value="Nowe">Nowe</option>
                                                 <option value="Realizacja">Realizacja</option>
