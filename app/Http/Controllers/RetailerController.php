@@ -48,9 +48,10 @@ class RetailerController extends Controller
     }
 
 
-    public function update()
-    {
-        dd("TEST");
+    public function update(Request $request)
+    {   
+        $data = request()->toArray();
+        dd($data['status']);
     }
 
 

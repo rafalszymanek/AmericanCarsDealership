@@ -1,20 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container-fluid mt-5 ">
         <div class="row">
             <div class="col-2 border-right">
                 <h2>Sprzedawca</h2>
                 <p>{{ $user -> name }} {{ $user -> surname }}</p>
-                
-
             </div>
             <div class="col-10">
                 <h2>Zamówienia</h2>
 
-                <form method="POST" action="/retailer">
-                @csrf
-                @method('PATCH') 
+                
                     <table class="table">
                     <thead>
                         <tr>
@@ -29,7 +26,7 @@
                         <th scope="col" class="text-center" style="width:10%">Akcja</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    </table>
 
                     
                     
@@ -37,36 +34,41 @@
                         $i = 0;
                     @endphp
                 
-                    @foreach ($orders as $order)
-                        <tr>
-                            <th class="text-center" scope="row">{{ $i+1 }}</th>
-                            <td class="text-center">{{ $clients[$i] -> name }} {{ $clients[$i] -> surname }}</td>
-                            <td class="text-center">{{ $products[$i] -> id }}</td>
-                            <td class="text-center">{{ $products[$i] -> category -> name }}</td>
-                            <td class="text-center">{{ $products[$i] -> name }}</td>
-                            <td class="text-center">{{ $products[$i] -> price }} PLN</td>
-                            <td class="text-center">{{ $order -> payment_method }}</td>
-                            
-                            <td class="form-group text-center">
-                                <select> 
-                                        <option value="volvo">{{ $order -> status}}</option>       
-                                        <option value="volvo">Nowe</option>
-                                        <option value="saab">Realizacja</option>
-                                        <option value="mercedes">Dostawa</option>
-                                        <option value="audi">Zakończone</option>
-                                </select>
-                            </td>       
-                            <td class="form-group text-center">
-                                <button type="submit" class="btn btn-primary">Zapisz</button>
-                            </td>
-                        </tr>
-                        @php
-                            $i++;
-                        @endphp
+                    @foreach ($orders as $order)   
+                    <form method="POST" action="/retailer/order/{{$order->id}}">
+                    @csrf
+                    @method('PATCH') 
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th class="text-center" scope="row">{{ $i+1 }}</th>
+                                    <td class="text-center">{{ $clients[$i] -> name }} {{ $clients[$i] -> surname }}</td>
+                                    <td class="text-center">{{ $products[$i] -> id }}</td>
+                                    <td class="text-center">{{ $products[$i] -> category -> name }}</td>
+                                    <td class="text-center">{{ $products[$i] -> name }}</td>
+                                    <td class="text-center">{{ $products[$i] -> price }} PLN</td>
+                                    <td class="text-center">{{ $order -> payment_method }}</td>
+                                    
+                                    <td class="form-group text-center">
+                                        <select id="status_to_ed" name="status"> 
+                                                <option value="noChange">{{ $order -> status}}</option>       
+                                                <option value="Nowe">Nowe</option>
+                                                <option value="Realizacja">Realizacja</option>
+                                                <option value="Dostawa">Dostawa</option>
+                                                <option value="Zakończone">Zakończone</option>
+                                        </select>
+                                    </td>       
+                                    <td class="form-group text-center">
+                                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                                    </td>
+                                </tr>
+                                @php
+                                    $i++;
+                                @endphp
+                            </tbody>
+                        </table>
+                    </form>
                     @endforeach
-                    </tbody>
-                    </table>
-                </form>
             </div>
         </div>
     </div>
