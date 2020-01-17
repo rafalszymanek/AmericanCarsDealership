@@ -16,6 +16,8 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/profile', 'ProfileController@index')->name('profile.show');
 Route::get('/retailer', 'RetailerController@index')->name('retailer.show');
+#Route::get('/retailer/{order}', 'RetailerController@edit')->name('retailer.edit');
+Route::patch('/retailer', 'RetailerController@update')->name('retailer.update');
 
 // Admin panel routes
 Route::get('/admin/products/add', 'AdminProductsController@addProductForm')->name('admin_products_add_form');

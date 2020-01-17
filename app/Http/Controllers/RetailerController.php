@@ -46,4 +46,12 @@ class RetailerController extends Controller
         ]);
 
     }
+
+
+    public function update()
+    {
+        dd("TEST");
+    }
+
+
 }
