@@ -59,7 +59,7 @@ class RetailerController extends Controller
             $order->save();
         }
 
-        return redirect('/retailer');
+        return redirect()->back()->withSuccess('Zamówienie zostalo zaktualizowane');
     }
 
 

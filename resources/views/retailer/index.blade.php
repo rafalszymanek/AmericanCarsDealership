@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <div class="container-fluid mt-5 ">
         <div class="row">
             <div class="col-2 border-right">
@@ -11,7 +12,12 @@
             <div class="col-10">
                 <h2>Zamówienia</h2>
 
-                
+                @if(session('success'))
+                <div class="alert alert-success" id="success-alert">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <strong>Zaktualizowano! </strong> Status zamówienia został zmieniony.
+                </div>
+                @endif
                     <table class="table">
                     <thead>
                         <tr>
@@ -72,4 +78,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        setTimeout(function() {
+            $('#success-alert').fadeOut('normal');
+        }, 3000);
+    </script>
 @endsection
