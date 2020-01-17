@@ -14,17 +14,27 @@ class RetailerController extends Controller
             return abort(404);
         }
         # Get all product assigned to retailer
-        $products = ('App\Product')::where('retailer_id', 4)->get();
-
+        $products = ('App\Product')::where('retailer_id', $user->id)->get();
+        
         # Get all orderProducts that product assigned to retailer is ordered
         $orderProductsArray = [];
+
         foreach ($products as $product) {
-            array_push($orderProductsArray, $product->orderProducts[0]); # Array because hasMany realtion :)
+            if(!$product->orderProducts->isEmpty()){
+                foreach ($product->orderProducts as $orderProduct) { # One product can have many orders
+                    array_push($orderProductsArray, $orderProduct); 
+                }
+                
+            }
+            
         }
+        
+        
         
         # Get all orders assigned to retailer
         $ordersArray = [];
         foreach ($orderProductsArray as $orderProduct) {
+
             array_push($ordersArray, $orderProduct->order);
         }
         
@@ -33,14 +43,13 @@ class RetailerController extends Controller
         foreach ($ordersArray as $order) {
             array_push($userArray, $order->user);
         }
-
-
+    
 
 
        
         return view('retailer.index', [
             'user' => $user, # Object 
-            'products' => $products, # Array
+            'orderProducts' => $orderProductsArray, # Array
             'orders' => $ordersArray, # Array
             'clients' => $userArray, # Array
         ]);
