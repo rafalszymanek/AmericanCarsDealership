@@ -21,8 +21,8 @@
                         <th scope="col" class="text-center" style="width:11%">Marka</th>
                         <th scope="col" class="text-center" style="width:11%">Model</th>
                         <th scope="col" class="text-center" style="width:11%">Cena</th>
-                        <th scope="col" class="text-center" style="width:%">Metoda płatności</th>
-                        <th scope="col" class="text-center" style="width:%">Status</th>
+                        <th scope="col" class="text-center" style="width:10%">Metoda płatności</th>
+                        <th scope="col" class="text-center" style="width:10%">Status</th>
                         <th scope="col" class="text-center" style="width:10%">Akcja</th>
                         </tr>
                     </thead>
@@ -42,14 +42,14 @@
                             <tbody>
                                 <tr>
                                     <th class="text-center" scope="row">{{ $i+1 }}</th>
-                                    <td class="text-center">{{ $clients[$i] -> name }} {{ $clients[$i] -> surname }}</td>
-                                    <td class="text-center">{{ $products[$i] -> id }}</td>
-                                    <td class="text-center">{{ $products[$i] -> category -> name }}</td>
-                                    <td class="text-center">{{ $products[$i] -> name }}</td>
-                                    <td class="text-center">{{ $products[$i] -> price }} PLN</td>
-                                    <td class="text-center">{{ $order -> payment_method }}</td>
+                                    <td class="text-center" style="width:20%">{{ $clients[$i] -> name }} {{ $clients[$i] -> surname }}</td>
+                                    <td class="text-center" style="width:10%;">{{ $products[$i] -> id }}</td>
+                                    <td class="text-center" style="width:11%">{{ $products[$i] -> category -> name }}</td>
+                                    <td class="text-center" style="width:11%">{{ $products[$i] -> name }}</td>
+                                    <td class="text-center" style="width:11%">{{ $products[$i] -> price }} PLN</td>
+                                    <td class="text-center" style="width:10%">{{ $order -> payment_method }}</td>
                                     
-                                    <td class="form-group text-center">
+                                    <td class="form-group text-center" style="width:10%">
                                         <select id="status" name="status"> 
                                                 <option value="noChange">{{ $order -> status}}</option>       
                                                 <option value="Nowe">Nowe</option>
@@ -58,7 +58,7 @@
                                                 <option value="Zakończone">Zakończone</option>
                                         </select>
                                     </td>       
-                                    <td class="form-group text-center">
+                                    <td class="form-group text-center" style="width:10%">
                                         <button type="submit" class="btn btn-primary">Zapisz</button>
                                     </td>
                                 </tr>
