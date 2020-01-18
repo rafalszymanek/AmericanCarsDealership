@@ -16,9 +16,9 @@
                 <li class="list-group-item">Opis: <br>{{$product->description}}</li>
             </ul>
         </div>
-        <div class="col-lg-4 col-md-12 justify-content-center mt-2">
+        <div class="col-lg-6 col-md-12 justify-content-center mt-2">
             @if (!empty($product->image_src))
-                <img src="{{ $product->image_src }}" class="rounded" alt="{{ $product->name }}">
+                <img src="{{ $product->image_src }}" style="width:100%;"class="rounded" alt="{{ $product->name }}">
             @endif
         </div>
     </div>
