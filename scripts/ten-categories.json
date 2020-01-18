@@ -1,0 +1,13 @@
+{"categories":
+    [
+        {"name": "Cadilac", "parent_id": 0},
+        {"name": "Chevrolet", "parent_id": 0}, 
+        {"name": "Chrysler", "parent_id": 0},
+        {"name": "Dodge", "parent_id": 0},
+        {"name": "Ford", "parent_id": 0},
+        {"name": "GMC", "parent_id": 0},
+        {"name": "Jeep", "parent_id": 0},
+        {"name": "Pontiac", "parent_id": 0},
+        {"name": "Tesla", "parent_id": 0}
+    ]
+}
