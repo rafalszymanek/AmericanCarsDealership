@@ -1,3 +1,6 @@
+#Clear table categories
+DB::table('categories')->truncate();
+
 $json_file = json_decode(file_get_contents("./scripts/9-categories.json"), true);
 $categories_data = $json_file['categories'];
 

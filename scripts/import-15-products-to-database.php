@@ -1,3 +1,6 @@
+#Clear table products
+DB::table('products')->truncate();
+
 $json_file = json_decode(file_get_contents("./scripts/15-products.json"), true);
 $product_data = $json_file['products'];
 
