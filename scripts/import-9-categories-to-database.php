@@ -1,4 +1,4 @@
-$json_file = json_decode(file_get_contents("./scripts/ten-categories.json"), true);
+$json_file = json_decode(file_get_contents("./scripts/9-categories.json"), true);
 $categories_data = $json_file['categories'];
 
 #foreach didn't work
