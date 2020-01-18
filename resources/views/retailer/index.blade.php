@@ -49,10 +49,10 @@
                                 <tr>
                                     <th class="text-center" scope="row">{{ $i+1 }}</th>
                                     <td class="text-center" style="width:20%">{{ $clients[$i] -> name }} {{ $clients[$i] -> surname }}</td>
-                                    <td class="text-center" style="width:10%;">{{ $orderProducts[$i]->products->id }}</td>
-                                    <td class="text-center" style="width:11%">{{ $orderProducts[$i]->products->category->name }}</td>
-                                    <td class="text-center" style="width:11%">{{ $orderProducts[$i]->products->name }}</td>
-                                    <td class="text-center" style="width:11%">{{ $orderProducts[$i]->products->price}} PLN</td>
+                                    <td class="text-center" style="width:10%;">{{ $orderProducts[$i]->product->id }}</td>
+                                    <td class="text-center" style="width:11%">{{ $orderProducts[$i]->product->category->name }}</td>
+                                    <td class="text-center" style="width:11%">{{ $orderProducts[$i]->product->name }}</td>
+                                    <td class="text-center" style="width:11%">{{ $orderProducts[$i]->product->price}} PLN</td>
                                     <td class="text-center" style="width:10%">{{ $order -> payment_method }}</td>
                                     
                                     <td class="form-group text-center" style="width:10%">
