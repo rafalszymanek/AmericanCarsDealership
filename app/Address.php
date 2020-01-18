@@ -16,6 +16,7 @@ class Address extends Model
         'postcode',
         'city',
         'user_id',
+        'is_default',
     ];
 
     public function user()

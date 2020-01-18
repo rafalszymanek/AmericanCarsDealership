@@ -8,7 +8,7 @@ class OrderProduct extends Model
 {
     protected $table = 'orders_products';
 
-    public function products()
+    public function product()
     {
         return $this->hasOne('App\Product', 'id', 'product_id');
     }

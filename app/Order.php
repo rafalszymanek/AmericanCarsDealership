@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -48,7 +49,7 @@ class Order extends Model
         return $this->hasOne("App\User", "id", "client_id");
     }
 
-   
+
     public static function boot()
     {
         parent::boot();
@@ -56,10 +57,32 @@ class Order extends Model
             $model->status = self::STATUS_NEW;
         });
 
+        Carbon::setLocale('pl');
     }
 
-    public function ordersProduct()
+    public function orderProducts()
     {
-        return $this->hasOne("App\OrderProduct");
+        return $this->hasMany('App\OrderProduct');
+    }
+
+    public function getFormattedPaymentMethod()
+    {
+        return isset(self::$paymentMethods[$this->payment_method])
+            ? self::$paymentMethods[$this->payment_method]
+            : 'b/d';
+    }
+
+    public function getFormattedRecollectionMethod()
+    {
+        return isset(self::$recollectionMethods[$this->recollect_place])
+            ? self::$recollectionMethods[$this->recollect_place]
+            : 'b/d';
+    }
+
+    public function getFormattedStatus()
+    {
+        return isset(self::$statuses[$this->status])
+            ? self::$statuses[$this->status]
+            : 'b/d';
     }
 }
