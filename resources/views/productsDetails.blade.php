@@ -7,10 +7,10 @@
     <div class="row justify-content-center mt-2">
         <div class="col-6 col-md-6" >
             <ul class="list-group">
-                <li class="list-group-item"><span class="float-right">{{$product->price}} PLN</span></li>
+                <li class="list-group-item">Cena:<span class="float-right">{{$product->price}} PLN</span></li>
                 <li class="list-group-item">Kolor: <span class="float-right">{{$product->color}}</span></li>
                 <li class="list-group-item">Rok: <span class="float-right">{{$product->year}}</span></li>
-                <li class="list-group-item">Typ Nadwozia:<span class="float-right">{{$product->body_type}}</span></li>
+                <li class="list-group-item">Typ nadwozia:<span class="float-right">{{$product->body_type}}</span></li>
                 <li class="list-group-item">Silnik:<span class="float-right">{{$product->engine}}</span></li>
                 <li class="list-group-item">Skrzynia biegów:<span class="float-right">{{$product->gearbox}}</span></li>
                 <li class="list-group-item">Opis: <br>{{$product->description}}</li>
