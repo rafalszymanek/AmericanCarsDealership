@@ -1,15 +1,4 @@
-
-
-echo "-------- \n";
-
-
-
-for ($x = 0; $x <= 1; $x++) {
-    $product_data[$x];
-} 
-
-
-$json_file = json_decode(file_get_contents("/Users/rafalszymanek/Documents/Projekty/AmericanCarsDealership/scripts/ten-products.json"), true);
+$json_file = json_decode(file_get_contents("./scripts/ten-products.json"), true);
 $product_data = $json_file['products'];
 
 #foreach didn't work
