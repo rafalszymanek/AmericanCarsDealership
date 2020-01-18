@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Address;
+use App\Http\Controllers\BaseController;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class RegisterController extends Controller
+class RegisterController extends BaseController
 {
     /*
     |--------------------------------------------------------------------------
@@ -63,12 +64,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'name' => $data['name'],
-            'surname' => $data['surname'],
-        ]);
+        $user = new User();
+        $user->email = $data['email'];
+        $user->password = Hash::make($data['password']);
+        $user->name = $data['name'];
+        $user->surname = $data['surname'];
+        $user->save();
+
         Address::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -80,7 +82,9 @@ class RegisterController extends Controller
             'user_id' => $user->id,
             'is_default' => 1,
         ]);
-
+        if ($user->id) {
+            $this->success('Rejestracja przebiegla pomyslnie.');
+        }
         return $user;
     }
 }

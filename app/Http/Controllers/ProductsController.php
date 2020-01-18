@@ -9,13 +9,16 @@ class ProductsController extends BaseController
 {
     public function all()
     {
-        $allProducts = Product::all();
+        $allProducts = Product::where(['is_available' => 1])->get();
         return view('products',$this->bindParams(['products' => $allProducts]));
     }
 
     public function category($id)
     {
-        $products = Product::where(['category_id' => $id])->get();
+        $products = Product::where([
+            'category_id' => $id,
+            'is_available' => 1
+        ])->get();
         return view('products', $this->bindParams([
             'products' => $products,
             'currentCategoryId' => $id

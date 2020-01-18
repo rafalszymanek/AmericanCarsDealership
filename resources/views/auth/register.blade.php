@@ -92,7 +92,7 @@
                             <label for="local_number" class="col-md-4 col-form-label text-md-right">{{ __('Nr lokalu') }}</label>
 
                             <div class="col-md-6">
-                                <input id="house_number" type="text" class="form-control @error('local_number') is-invalid @enderror" name="local_number" value="{{ old('local_number') }}" required autocomplete="local_number" autofocus>
+                                <input id="local_number" type="text" class="form-control @error('local_number') is-invalid @enderror" name="local_number" value="{{ old('local_number') }}" required autocomplete="local_number" autofocus>
 
                                 @error('local_number')
                                 <span class="invalid-feedback" role="alert">
