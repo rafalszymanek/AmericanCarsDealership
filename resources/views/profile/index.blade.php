@@ -1,4 +1,4 @@
-@extends('layouts.homeLayout')
+@extends('layouts.app')
 
 @section('content')
     <div class="container-fluid mt-5 ">
@@ -6,10 +6,10 @@
             <div class="col-3 border-right">
                 <h2>{{ $user->name }} {{ $user->surname }}</h2>
                 <p>{{ $user->email }}</p>
-                <p>Ulica: {{ $address->street }}</p>
-                <p>Nr. domu: {{ $address->house_no }}</p>
-                <p>Kod pocztowy: {{ $address->postcode }}</p>
-                <p>Miasto: {{ $address->city }}</p>
+                <p>Ulica: {{ $address['street'] }}</p>
+                <p>Nr. domu: {{ $address['house_number'] }} / {{ $address['local_number'] }} </p>
+                <p>Kod pocztowy: {{ $address['postcode'] }}</p>
+                <p>Miasto: {{ $address['city'] }} </p>
 
             </div>
             <div class="col-9">
@@ -18,9 +18,9 @@
                 <thead>
                     <tr>
                     <th scope="col">Nr</th>
-                    <th scope="col" style="width:15%">Marka</th>
-                    <th scope="col" style="width:15%">Model</th>
-                    <th scope="col">Cena</th>
+                    <th scope="col" style="width:14%">Marka</th>
+                    <th scope="col" style="width:14%">Model</th>
+                    <th scope="col" style="width:12%">Cena</th>
                     <th scope="col" style="width:9%">Rocznik</th>
                     <th scope="col" style="width:9%">Kolor</th>
                     <th scope="col" style="width:9%">Silnik</th>
@@ -30,42 +30,26 @@
                     </tr>
                 </thead>
                 <tbody>
+                @php
+                    $i = 0;
+                @endphp
+                @foreach ($products as $product)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Ford</td>
-                        <td>Mustang</td>
-                        <td>10000$</td>
-                        <td>2018</td>
-                        <td>Czerwony</td>
-                        <td>Benzynowy</td>
-                        <td>Coupe</td>
-                        <td>Manualna</td>
-                        <td>Dostawa</td>
+                        <th scope="row">{{ $i+1 }}</th>
+                        <td>{{ $categories[$i]['name'] }}</td>
+                        <td>{{ $product['name']}}</td>
+                        <td>{{ $product['price']}} PLN</td>
+                        <td>{{ $product['year']}}</td>
+                        <td>{{ $product['color']}}</td>
+                        <td>{{ $product['engine']}}</td>
+                        <td>{{ $product['body_type']}}</td>
+                        <td>{{ $product['gearbox']}}</td>
+                        <td>{{ $orders[$i]->status }}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Ford</td>
-                        <td>Mustang</td>
-                        <td>10000$</td>
-                        <td>2018</td>
-                        <td>Czerwony</td>
-                        <td>Benzynowy</td>
-                        <td>Coupe</td>
-                        <td>Manualna</td>
-                        <td>Weryfikowanie</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Ford</td>
-                        <td>Mustang</td>
-                        <td>10000$</td>
-                        <td>2018</td>
-                        <td>Czerwony</td>
-                        <td>Benzynowy</td>
-                        <td>Coupe</td>
-                        <td>Manualna</td>
-                        <td>Oczekuje płatności</td>
-                    </tr>
+                    @php
+                        $i++;
+                    @endphp
+                @endforeach
                 </tbody>
                 </table>
             </div>

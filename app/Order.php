@@ -43,6 +43,12 @@ class Order extends Model
         return static::$recollectionMethods;
     }
 
+    public function user()
+    {
+        return $this->hasOne("App\User", "id", "client_id");
+    }
+
+   
     public static function boot()
     {
         parent::boot();
@@ -50,5 +56,10 @@ class Order extends Model
             $model->status = self::STATUS_NEW;
         });
 
+    }
+
+    public function ordersProduct()
+    {
+        return $this->hasOne("App\OrderProduct");
     }
 }
