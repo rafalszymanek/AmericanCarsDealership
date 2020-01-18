@@ -7,6 +7,11 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    const ROLE_CLIENT = 'CLIENT';
+    const ROLE_RETAILER = 'RETAILER';
+    const ROLE_ADMIN = 'ADMIN';
+
+
     use Notifiable;
 
     /**

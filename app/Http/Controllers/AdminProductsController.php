@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\Retailer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -30,10 +31,13 @@ class AdminProductsController extends BaseController
     public function addProductForm()
     {
         $categories = Category::where(['parent_id' => 0])->get();
+        $retailers = Retailer::where(['is_active' => 1])->get();
+
         return view('admin.products.add', [
             'categories' => $categories,
             'alert' => $this->getAlert(),
             'formAction' => route('admin_products_add_action'),
+            'retailers' => $retailers,
             'product' => new Product(),
         ]);
     }
@@ -82,12 +86,15 @@ class AdminProductsController extends BaseController
         // sql injection solution
         $product = Product::where(['id' => $id])->first();
         $categories = Category::where(['parent_id' => 0])->get();
-        return view('admin.products.add', [
+        $retailers = Retailer::where(['is_active' => 1])->get();
+
+        return view('admin.products.add', $this->bindParams([
             'categories' => $categories,
             'alert' => $this->getAlert(),
             'product' => $product,
+            'retailers' => $retailers,
             'formAction' => route('admin_products_update_action', ['id' => $product->id]),
-        ]);
+        ]));
     }
 
     public function updateProductAction(Request $request)

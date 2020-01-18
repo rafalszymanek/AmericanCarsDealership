@@ -15,6 +15,7 @@ class Address extends Model
         'local_number',
         'postcode',
         'city',
+        'user_id',
     ];
 
     public function user()

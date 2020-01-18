@@ -3,9 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="welcome-message">
-            <h1>Amerykańska motoryzacja na wyciągnięcie ręki!</h1>
-        </div>
         <div class="col-md-8">
             <div class="card">
                 @if (!empty($product->id))
@@ -54,8 +51,14 @@
                             <input value="{{ $product->year }}" required name="year" type="text" class="form-control" id="year">
                         </div>
                         <div class="form-group">
-                            <label for="retailerId">Id sprzedawcy <em>*</em></label>
-                            <input value="{{ $product->retailer_id }}" required name="retailer_id" type="text" class="form-control" id="retailerId">
+                            <label for="retailerId">Sprzedawca <em>*</em></label>
+                            <select name="retailer_id" id="retailerId" required>
+                                @foreach ($retailers as $retailer)
+                                    <option {{ $product && $product->retailer_id === $retailer->id ? 'selected' : ''}} value="{{ $retailer->id }}">
+                                        {{ $retailer->name . ' ' . $retailer->surname }}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">
