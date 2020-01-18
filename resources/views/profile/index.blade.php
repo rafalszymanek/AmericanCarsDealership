@@ -30,6 +30,7 @@
                                     <h2 class="mb-0">
                                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#order{{ $order->id }}" aria-expanded="true" aria-controls="collapseOne">
                                             Zamówienie o id: <span class="badge badge-info">{{ $order->id }}</span>
+                                            Utworzone <span class="badge badge-success">{{ $order->created_at->diffForHumans() }}</span>
                                             <!-- Utworzone <span class="badge badge-success"></span> -->
                                         </button>
                                     </h2>
@@ -68,7 +69,7 @@
                                                    <td>{{ $orderProduct->product->color }}</td>
                                                    <td>{{ $orderProduct->product->engine }}</td>
                                                    <td>{{ $orderProduct->product->body_type }}</td>
-                                                   <td>{{ $orderProduct->product->gerabox }}</td>
+                                                   <td>{{ $orderProduct->product->gearbox }}</td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
