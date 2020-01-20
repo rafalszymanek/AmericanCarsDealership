@@ -53,8 +53,9 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col" >Nazwa produktu</th>
-                                                    <th scope="col" >Kategoria</th>
+                                                    <th scope="col">Nazwa produktu</th>
+                                                    <th scope="col">ID produktu</th>
+                                                    <th scope="col">Kategoria</th>
                                                     <th scope="col">Cena</th>
                                                     <th scope="col">Rocznik</th>
                                                     <th scope="col">Kolor</th>
@@ -71,6 +72,7 @@
                                                 <tr>
                                                    <td>{{ $i = $i+1 }}</td>
                                                    <td>{{ $orderProduct->product->name }}</td>
+                                                   <td>{{ $orderProduct->product->id }}</td>
                                                    <td>{{ $orderProduct->product->category->name }}</td>
                                                    <td>{{ $orderProduct->product->price }}</td>
                                                    <td>{{ $orderProduct->product->year }}</td>
