@@ -10,7 +10,7 @@
         "color": "Srebny", 
         "body_type": "Van", 
         "engine": "Hybryda", 
-        "gearbox": "Automat"
+        "gearbox": "Automatyczna"
     }
     ,
     {"name": "Challenger", 
@@ -24,7 +24,7 @@
         "color": "Pomarańczowy", 
         "body_type": "Coupe", 
         "engine": "Benzynowy", 
-        "gearbox": "Automat"
+        "gearbox": "Automatyczna"
     }
     ,
     {"name": "Viper", 
@@ -52,7 +52,7 @@
         "color": "Żółty", 
         "body_type": "Suv", 
         "engine": "Diesel", 
-        "gearbox": "Automat"
+        "gearbox": "Automatyczna"
     }
     ,
     {"name": "Fiesta", 
@@ -65,7 +65,7 @@
         "retailer_id": 1, 
         "color": "Niebieski", 
         "body_type": "Hatchback", 
-        "engine": "Benzyna", 
+        "engine": "Benzynowy", 
         "gearbox": "Manualna"
     }
     ,
@@ -79,8 +79,8 @@
         "retailer_id": 1, 
         "color": "Niebieski", 
         "body_type": "Pickup", 
-        "engine": "Benzyna", 
-        "gearbox": "Automat"
+        "engine": "Benzynowy", 
+        "gearbox": "Automatyczna"
     }
     ,
     {"name": "Mustang", 
@@ -93,7 +93,7 @@
         "retailer_id": 1, 
         "color": "Czarny", 
         "body_type": "Coupe", 
-        "engine": "Benzyna", 
+        "engine": "Benzynowy", 
         "gearbox": "Manualna"
     }
     ,
@@ -108,7 +108,7 @@
         "color": "Biały", 
         "body_type": "Suv", 
         "engine": "Benzynowy", 
-        "gearbox": "Automat"
+        "gearbox": "Automatyczna"
     }
     ,
     {"name": "Savana", 
@@ -178,7 +178,7 @@
         "color": "Biały", 
         "body_type": "Sedan", 
         "engine": "Elektryczny", 
-        "gearbox": "Automat"
+        "gearbox": "Automatyczna"
     },
     {"name": "Model 3", 
         "description": "Model 3 jest samochodem w pełni elektrycznym. Oficjalna prezentacja miała miejsce 31 marca 2016 roku, a oficjalne wydawanie aut nastąpiło 28 lipca 2017 roku", 
@@ -191,7 +191,7 @@
         "color": "Czerwony", 
         "body_type": "Sedan", 
         "engine": "Elektryczny", 
-        "gearbox": "Automat"
+        "gearbox": "Automatyczna"
     }
     ,
     {"name": "Model X", 
@@ -205,7 +205,7 @@
         "color": "Czarny", 
         "body_type": "Suv", 
         "engine": "Elektryczny", 
-        "gearbox": "Automat"
+        "gearbox": "Automatyczna"
     }
     
     ]
