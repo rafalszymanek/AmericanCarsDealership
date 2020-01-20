@@ -42,11 +42,9 @@
                                         @method('PATCH') 
                                         <p>Zmiana statusu zamówienia
                                             <select id="status" name="status"> 
-                                                    <option value="noChange">{{ $order -> status}}</option>       
-                                                    <option value="Nowe">Nowe</option>
-                                                    <option value="Realizacja">Realizacja</option>
-                                                    <option value="Dostawa">Dostawa</option>
-                                                    <option value="Zakończone">Zakończone</option>
+                                                    @foreach (\App\Order::getStatuses() as $key => $method)
+                                                        <option value="{{ $key }}">{{ $method }}</option>
+                                                    @endforeach
                                             </select>
                                             <button type="submit" class="btn btn-primary">Zapisz</button>
                                             </p>
