@@ -34,8 +34,9 @@ class RetailerController extends Controller
         # Get all orders assigned to retailer
         $ordersArray = [];
         foreach ($orderProductsArray as $orderProduct) {
-
+    
             array_push($ordersArray, $orderProduct->order);
+            $ordersArray = array_unique($ordersArray);
         }
         
         # Get all users that ordered a car assigned to our retailer
@@ -43,7 +44,7 @@ class RetailerController extends Controller
         foreach ($ordersArray as $order) {
             array_push($userArray, $order->user);
         }
-    
+
 
 
        
