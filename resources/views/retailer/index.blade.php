@@ -44,6 +44,7 @@
                     <form method="POST" action="/retailer/order/{{$order->id}}">
                     @csrf
                     @method('PATCH') 
+                        <div id="accordionExample">
                         <table class="table">
                             <tbody>
                                 <tr>
@@ -73,7 +74,19 @@
                                 @endphp
                             </tbody>
                         </table>
+                        </div>
                     </form>
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#order{{ $order->id }}" aria-expanded="true" aria-controls="collapseOne">Szczegóły zamówienia</button>
+                    <div id="order{{ $order->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <h3>Dane zamawiającego</h3>
+                            <p>Imię i Nazwisko: <span class="badge">{{ $order->name }} {{ $order->surname }} </span></p>
+                            <p>Numer domu: <span class="badge">{{ $order->house_number }}/{{ $order->local_number }}</span> </p>
+                            <p>Ulica: <span class="badge">{{ $order->street }}</span></p>
+                            <p>Kod pocztowy: <span class="badge">{{ $order->postcode }}</span></p>
+                            <p>Miasto: <span class="badge">{{ $order->city }}</span></p>
+                        </div>
+                    </div>
                     @endforeach
             </div>
         </div>
