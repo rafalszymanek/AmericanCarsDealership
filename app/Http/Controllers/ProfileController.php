@@ -10,6 +10,7 @@ class ProfileController extends BaseController
     {
         $user = Auth::user();
         $orders = $user->orders;
+
         return view('profile.index', $this->bindParams([
             'user' => $user,
             'address' => $user->defaultAddress,

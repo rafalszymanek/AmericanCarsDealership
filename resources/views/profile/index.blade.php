@@ -74,8 +74,21 @@
                                             @endforeach
                                             </tbody>
                                         </table>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#order_data_{{ $order->id }}" aria-expanded="true" aria-controls="collapseTwo">Szczegóły zamówienia</button>
                                     </div>
+                                    <div id="order_data_{{ $order->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#order{{ $order->id }}">
+                                        <div class="card-body">
+                                            <h3>Dane zamawiającego</h3>
+                                            <p>Imię i Nazwisko: <span class="badge">{{ $order->name }} {{ $order->surname }} </span></p>
+                                            <p>Numer domu: <span class="badge">{{ $order->house_number }}/{{ $order->local_number }}</span> </p>
+                                            <p>Ulica: <span class="badge">{{ $order->street }}</span></p>
+                                            <p>Kod pocztowy: <span class="badge">{{ $order->postcode }}</span></p>
+                                            <p>Miasto: <span class="badge">{{ $order->city }}</span></p>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
+                                
                             </div>
                         @endforeach
                     </div>
