@@ -28,8 +28,11 @@ class VulnLoginController extends BaseController
         if($user = ('App\User')::where('email','=',$request['email'])->first()){
             if($user->password == $request['password']){
                 Auth::loginUsingId($user->id, TRUE);
+                return redirect('/');
             }
+            return redirect('/login')->withErrors(['Błędne Hasło']);
         }
+        return redirect('/login')->withErrors(['Błędny Login']);
         
         
     }
