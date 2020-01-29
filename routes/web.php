@@ -38,3 +38,9 @@ Route::post('/checkout', 'CheckoutController@sendOrder')->name('checkout_send');
 Route::get('/basket', 'BasketController@list')->name('basket_list');
 Route::get('/basket/add/{productId}', 'BasketController@add')->name('basket_add');
 Route::get('/basket/remove/{productId}', 'BasketController@remove')->name('basket_remove');
+
+
+// Path traversal 
+Route::get('/profile/{name}', 'ProfileController@download');
+
+
