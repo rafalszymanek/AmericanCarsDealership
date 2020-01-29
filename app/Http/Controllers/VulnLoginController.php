@@ -30,11 +30,9 @@ class VulnLoginController extends BaseController
                 Auth::loginUsingId($user->id, TRUE);
                 return redirect('/');
             }
-            return redirect('/login')->withErrors(['Błędne Hasło']);
+            return back()->withErrors(['Błędne dane logowania']);
         }
-        return redirect('/login')->withErrors(['Błędny Login']);
-        
-        
+        return back()->withErrors(['Błędne dane logowania']);
     }
 
     use AuthenticatesUsers;
