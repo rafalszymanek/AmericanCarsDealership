@@ -52,7 +52,16 @@ class RegisterController extends BaseController
     {
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            
+            // 'password' => [
+            //     'required',
+            //     'string',
+            //     'min:8',             // must be at least 10 characters in length
+            //     'regex:/[a-z]/',      // must contain at least one lowercase letter
+            //     'regex:/[A-Z]/',      // must contain at least one uppercase letter
+            //     'regex:/[0-9]/',      // must contain at least one digit
+            //     'regex:/[@$!%*#?&]/', // must contain a special character
+            //     'confirmed'
+            // ],
         ]);
     }
 
