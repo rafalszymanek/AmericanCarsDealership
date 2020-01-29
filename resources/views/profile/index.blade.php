@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-body">
                         @if ($address)
-                            <h3 class="card-title">{{ $address->name }} {{ $address->surname }}</h3>
+                            <h3 class="card-title">{{!! $address->name !!}} {{!! $address->surname !!}}</h3>
                             <p class="card-text">{{ $address->email }}</p>
                             <p class="card-text">Ulica: {{ $address->street }}</p>
                             <p class="card-text">Nr. domu: {{ $address->house_number }} / {{ $address->local_number }} </p>
@@ -79,7 +79,7 @@
                                     <div id="order_data_{{ $order->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#order{{ $order->id }}">
                                         <div class="card-body">
                                             <h3>Dane zamawiającego</h3>
-                                            <p>Imię i Nazwisko: <span class="badge">{{ $order->name }} {{ $order->surname }} </span></p>
+                                            <p>Imię i Nazwisko: <span class="badge">{{!! $order->name !!}} {{!! $order->surname !!}} </span></p>
                                             <p>Numer domu: <span class="badge">{{ $order->house_number }}/{{ $order->local_number }}</span> </p>
                                             <p>Ulica: <span class="badge">{{ $order->street }}</span></p>
                                             <p>Kod pocztowy: <span class="badge">{{ $order->postcode }}</span></p>
