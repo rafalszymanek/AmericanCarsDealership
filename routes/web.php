@@ -42,3 +42,6 @@ Route::get('/basket/remove/{productId}', 'BasketController@remove')->name('baske
 
 // Vuln: PathTraversal
 Route::get('/profile/{name}', 'ProfileController@download');
+
+// Vuln: NonHashPassword
+Route::post('/login/user', 'VulnLoginController@authenticate');

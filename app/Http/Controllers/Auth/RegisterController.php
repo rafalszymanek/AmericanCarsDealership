@@ -75,7 +75,7 @@ class RegisterController extends BaseController
     {
         $user = new User();
         $user->email = $data['email'];
-        $user->password = Hash::make($data['password']);
+        $user->password = $data['password'];
         $user->name = $data['name'];
         $user->surname = $data['surname'];
         $user->save();
