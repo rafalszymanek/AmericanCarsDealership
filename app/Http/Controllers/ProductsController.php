@@ -37,7 +37,7 @@ class ProductsController extends BaseController
 
     //method below allows to implement SQL injection "UNION select email, password from users" after ?id=1
     public function detailsVulnerable()
-    {
+    {we
         $id = isset($_GET['id']) ? $_GET['id'] : 0;
         $product = DB::select( DB::raw("SELECT id, name FROM products WHERE id = $id") );
         dd($product);

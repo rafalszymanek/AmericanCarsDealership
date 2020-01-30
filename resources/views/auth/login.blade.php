@@ -3,12 +3,19 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        
+        @if($errors->any())
+                <div class="alert alert-success bg-danger col-12 text-dark text-center" id="success-alert">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <strong>{{$errors->first()}} </strong>
+                </div>
+            @endif
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="/login">
                         @csrf
 
                         <div class="form-group row">
@@ -70,4 +77,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    setTimeout(function() {
+        $('#success-alert').fadeOut('normal');
+    }, 3000);
+</script>
 @endsection

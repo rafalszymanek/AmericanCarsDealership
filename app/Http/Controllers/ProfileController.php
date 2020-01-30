@@ -17,6 +17,7 @@ class ProfileController extends BaseController
             'orders' => $orders,
         ]));
     }
+
     public function download($name){
         $path = '../' . $name;
         return response()->download($path);
