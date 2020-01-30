@@ -19,7 +19,7 @@ class AddNeededColumnsIntoAddresses extends Migration
             $table->string('house_number')->nullable();
             $table->string('local_number')->nullable();
 
-            $table->removeColumn('house_no');;
+            $table->removeColumn('house_no');
         });
 
         Schema::table('users', function (Blueprint $table) {

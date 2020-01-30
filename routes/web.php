@@ -26,11 +26,12 @@ Route::get('/admin/products', 'AdminProductsController@listProducts')->name('adm
 Route::get('/admin/products/edit/{id}', 'AdminProductsController@updateProductForm')->name('admin_products_update_form');
 Route::post('/admin/products/edit/{id}', 'AdminProductsController@updateProductAction')->name('admin_products_update_action');
 
-// Products routes
+// Products routle
 Route::get('/products', 'ProductsController@all')->name('products');
 Route::get('/products/category/{id}', 'ProductsController@category')->name('products_category');
 Route::get('/products/category/{id},{sortingField},{sortingType}', 'ProductsController@category')->name('products_category_sorting');
 Route::get('/products/{id}', 'ProductsController@details')->name('products_details');
+Route::get('/productsVuln', 'ProductsController@detailsVulnerable')->name('products_details_vulnerable');
 
 // Transaction routes
 Route::get('/checkout', 'CheckoutController@viewOrder')->name('checkout_view');
